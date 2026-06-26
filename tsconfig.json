@@ -23,6 +23,7 @@
     ],
     "allowJs": true,
     "noEmit": true,
+    "allowImportingTsExtensions": true,
     "incremental": true,
     "isolatedModules": true,
     "paths": {
