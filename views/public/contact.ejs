@@ -1,0 +1,30 @@
+<div class="contact">
+  <div class="contact__left">
+    <div class="contact__left-bg"></div>
+    <div class="relative z-10">
+      <div class="contact__label reveal-up"><%= t('contact.title') %></div>
+      <h1 class="contact__title reveal-up font-display"><%= t('contact.title') %></h1>
+    </div>
+  </div>
+
+  <div class="contact__right">
+    <p class="contact__intro reveal-up"><%= t('contact.intro') %></p>
+
+    <div class="reveal-up">
+      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=<%= email %>" target="_blank" class="contact__email-btn">
+        <span><%= t('contact.email_btn') %></span>
+        <span>&rarr;</span>
+      </a>
+      <p class="contact__email-text"><%= email %></p>
+    </div>
+
+    <% if (socials.instagram || socials.youtube || socials.vimeo || socials.tiktok) { %>
+    <div class="contact__socials reveal-up">
+      <% if (socials.instagram) { %><a href="<%= socials.instagram %>" target="_blank" class="contact__social-link"><span class="contact__social-link__dash">&mdash;</span>Instagram</a><% } %>
+      <% if (socials.youtube) { %><a href="<%= socials.youtube %>" target="_blank" class="contact__social-link"><span class="contact__social-link__dash">&mdash;</span>YouTube</a><% } %>
+      <% if (socials.vimeo) { %><a href="<%= socials.vimeo %>" target="_blank" class="contact__social-link"><span class="contact__social-link__dash">&mdash;</span>Vimeo</a><% } %>
+      <% if (socials.tiktok) { %><a href="<%= socials.tiktok %>" target="_blank" class="contact__social-link"><span class="contact__social-link__dash">&mdash;</span>TikTok</a><% } %>
+    </div>
+    <% } %>
+  </div>
+</div>

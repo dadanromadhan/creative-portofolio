@@ -1,0 +1,81 @@
+<% const s = settings %>
+<% const heroTagline = s?.heroTagline || t('hero.tagline') %>
+<% const lines = heroTagline.match(/.{1,40}(?:\s|$)/g) || [heroTagline] %>
+
+<section class="hero" id="hero">
+  <div class="hero__media">
+    <% if (s?.heroReel?.url) { %>
+      <video autoplay muted loop playsinline>
+        <source src="<%= s.heroReel.url %>" type="<%= s.heroReel.mimeType || 'video/mp4' %>">
+      </video>
+      <div class="hero__gradient"></div>
+    <% } else { %>
+      <div class="blob-container">
+        <div class="blob blob--1"></div>
+        <div class="blob blob--2"></div>
+        <div class="blob blob--3"></div>
+      </div>
+      <div class="hero__gradient"></div>
+    <% } %>
+  </div>
+
+  <div class="hero__content hero-text-wrapper">
+    <p class="hero__tag"><%= s?.heroSubtitle || t('hero.sub') %></p>
+    <h1 class="hero__title">
+      <% lines.forEach((line, li) => { %>
+        <span class="line"><span class="line-inner"><%= line.trim() %></span></span>
+      <% }) %>
+    </h1>
+    <div class="hero__cta-wrap">
+      <a href="/work" class="hero__cta">
+        <span><%= t('hero.cta') %></span>
+        <span class="hero__cta-arrow">&rarr;</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="hero__scroll-hint">
+    <div class="hero__scroll-line"></div>
+    <span class="hero__scroll-text">Scroll</span>
+  </div>
+</section>
+
+<% const featured = media.filter(m => m.featured).slice(0, 6) %>
+<% if (featured.length) { %>
+<section class="section max-w-[1400px] mx-auto px-6 sm:px-8">
+  <div class="section__header reveal-up">
+    <div class="section__label"><%= t('work.title') %></div>
+    <h2 class="section__title"><%= t('work.title') %></h2>
+    <div class="section__divider"></div>
+  </div>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 stagger-children">
+    <% featured.forEach((m, i) => { %>
+      <a href="/work#item-<%= m.id %>" class="featured-card group reveal-scale">
+        <% if (m.embedCode) { %>
+          <div class="w-full h-full embed-code-container"><%- m.embedCode %></div>
+        <% } else if (m.type === 'video' && m.source) { %>
+          <video src="<%= m.source %>" muted playsinline></video>
+        <% } else if (m.source) { %>
+          <img src="<%= m.source %>" loading="lazy" alt="<%= m.title %>" />
+        <% } else { %>
+          <div class="w-full h-full bg-charcoal"></div>
+        <% } %>
+        <div class="featured-card__overlay"></div>
+        <div class="featured-card__border"></div>
+        <div class="featured-card__info">
+          <p class="featured-card__title"><%= m.title %></p>
+        </div>
+        <span class="featured-card__index"><%= String(i + 1).padStart(2, '0') %></span>
+      </a>
+    <% }) %>
+  </div>
+
+  <div class="mt-16 text-center reveal-up">
+    <a href="/work" class="hero__cta">
+      <span><%= t('hero.cta') %></span>
+      <span class="hero__cta-arrow">&rarr;</span>
+    </a>
+  </div>
+</section>
+<% } %>

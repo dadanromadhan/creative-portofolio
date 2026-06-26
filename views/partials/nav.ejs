@@ -1,0 +1,30 @@
+<nav class="nav" id="mainNav">
+  <div class="nav__inner">
+    <a href="/" class="nav__logo">Dadan<span class="nav__logo-accent">.</span></a>
+
+    <div class="nav__links">
+      <a href="/" class="nav-link"><%= t('nav.home') %></a>
+      <a href="/work" class="nav-link"><%= t('nav.work') %></a>
+      <a href="/about" class="nav-link"><%= t('nav.about') %></a>
+      <a href="/contact" class="nav-link"><%= t('nav.contact') %></a>
+    </div>
+
+    <div class="flex items-center gap-4">
+      <a href="?lang=<%= otherLang %>" class="nav__lang hidden md:inline-block"><%= t('lang.switch') %></a>
+      <button id="menuBtn" class="nav__burger" aria-label="Menu">
+        <span class="nav__burger-line"></span>
+        <span class="nav__burger-line"></span>
+        <span class="nav__burger-line"></span>
+      </button>
+    </div>
+  </div>
+
+  <div id="mobileMenu" class="nav__mobile">
+    <a href="/"><%= t('nav.home') %></a>
+    <a href="/work"><%= t('nav.work') %></a>
+    <a href="/about"><%= t('nav.about') %></a>
+    <a href="/contact"><%= t('nav.contact') %></a>
+    <a href="?lang=<%= otherLang %>" class="nav__mobile-lang"><%= t('lang.switch') %></a>
+  </div>
+</nav>
+<div class="h-16"></div>

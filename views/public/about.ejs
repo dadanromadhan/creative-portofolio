@@ -1,0 +1,49 @@
+<div class="about-hero">
+  <div class="about-hero__bg"></div>
+  <div class="max-w-[1400px] mx-auto w-full px-6 sm:px-8 relative z-10">
+    <div class="section__label reveal-up"><%= t('about.title') %></div>
+    <h1 class="font-display" style="font-size: var(--font-2xl); line-height: 1.1; color: var(--c-cream);"><%= t('about.title') %></h1>
+    <div class="section__divider reveal-up"></div>
+  </div>
+</div>
+
+<div class="about-content">
+  <div class="about-text reveal-left">
+    <p class="about-text__body"><%= t('about.bio') %></p>
+     <p class="about-text__body mt-6"><%- t('about.tagline') %></p>
+  </div>
+  <div class="about-visual reveal-right">
+    <div class="about-visual__frame">
+      <div class="about-visual__inner">
+         <img src="/media/6.jpg" alt="Behind the scenes" loading="lazy" />
+      </div>
+      <div class="about-visual__tag"><%= settings?.heroSubtitle || t('hero.sub') %></div>
+      <div class="about-visual__accent"></div>
+    </div>
+  </div>
+</div>
+
+<div class="about-services">
+  <hr class="hr-subtle">
+  <div class="section__label reveal-up mt-16">What I Do</div>
+  <h2 class="section__title reveal-up">Services</h2>
+  <div class="section__divider reveal-up"></div>
+
+  <div class="about-services__grid stagger-children">
+    <div class="service-card">
+      <div class="service-card__icon">&#9654;</div>
+      <h3 class="service-card__title">Videography</h3>
+      <p class="service-card__desc">From concept to final cut — cinematic storytelling that captures the essence of your vision with precision and artistry.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-card__icon">&#9733;</div>
+      <h3 class="service-card__title">Photography</h3>
+      <p class="service-card__desc">Still frames that speak volumes. Editorial, event, and artistic photography with a cinematic eye for light and composition.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-card__icon">&#9998;</div>
+      <h3 class="service-card__title">Editing</h3>
+      <p class="service-card__desc">Color grading, motion graphics, and post-production that elevates raw footage into polished, compelling narratives.</p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__left">
+      <div class="footer__brand">Dadan<span style="color:var(--c-gold)">.</span></div>
+      <p class="footer__copy"><%= t('footer.text') %></p>
+    </div>
+    <div class="footer__socials">
+      <% if (settings?.instagram) { %>
+        <a href="<%= settings.instagram %>" target="_blank" rel="noopener" class="footer__social-link">Instagram</a>
+      <% } %>
+      <% if (settings?.youtube) { %>
+        <a href="<%= settings.youtube %>" target="_blank" rel="noopener" class="footer__social-link">YouTube</a>
+      <% } %>
+      <% if (settings?.vimeo) { %>
+        <a href="<%= settings.vimeo %>" target="_blank" rel="noopener" class="footer__social-link">Vimeo</a>
+      <% } %>
+      <% if (settings?.tiktok) { %>
+        <a href="<%= settings.tiktok %>" target="_blank" rel="noopener" class="footer__social-link">TikTok</a>
+      <% } %>
+    </div>
+  </div>
+</footer>
