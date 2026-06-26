@@ -1,5 +1,5 @@
 import { getPayload, type Payload } from "payload";
-import config from "../../payload.config.ts";
+import config from "@payload-config";
 
 let payloadInstance: Payload | null = null;
 
